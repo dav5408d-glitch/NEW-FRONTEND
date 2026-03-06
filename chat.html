@@ -1720,17 +1720,10 @@ IMPORTANT: Sois concis et va droit au but.`;
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify({
-                            model: model,
-                            prompt: contextPrompt,
-                            stream: false,
-                            options: { 
-                                temperature: temperature,
-                                top_p: currentPlan === 'free' ? 0.9 : currentPlan === 'pro' ? 0.92 : 0.95,
-                                max_tokens: maxTokens,
-                                num_ctx: currentPlan === 'free' ? 2048 : currentPlan === 'pro' ? 3072 : 4096,
-                                repeat_penalty: 1.1, // Évite les répétitions
-                                stop: ['\n\nHuman:', '\n\nUser:', '###'] // Arrêts propres
-                            }
+                            message: contextPrompt,
+                            image: messageData.images && messageData.images.length > 0 ? messageData.images[0] : undefined,
+                            searchWeb: false,
+                            conversationId: currentChatId
                         }),
                         signal: AbortSignal.timeout(30000) // Timeout 30 secondes
                     };
