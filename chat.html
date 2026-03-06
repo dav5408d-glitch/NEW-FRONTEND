@@ -1663,6 +1663,10 @@ Titre (2 mots max):`;
                     return;
                 }
 
+                // Définir le plan et les paramètres
+                const currentPlan = localStorage.getItem('rift_selected_plan') || 'free';
+                const temperature = currentPlan === 'free' ? 0.7 : currentPlan === 'pro' ? 0.8 : 0.9;
+                const maxTokens = currentPlan === 'free' ? 500 : currentPlan === 'pro' ? 800 : 2000;
                 
                 const conversationHistory = chats[currentChatId] || [];
                 let contextPrompt = '';
