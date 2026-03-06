@@ -1802,7 +1802,7 @@ IMPORTANT: Sois concis et va droit au but.`;
                 } else if (error.message.includes('model not found')) {
                     displayError('❌ Modèle non trouvé. Installez-le avec: `ollama pull mistral:latest`');
                 } else if (error.message.includes('ECONNREFUSED') || error.message.includes('NetworkError')) {
-                    displayError('❌ Impossible de se connecter à Ollama. Vérifie que Ollama tourne sur ton PC.');
+                    displayError('❌ Erreur de connexion au serveur IA. Vérifie que le backend fonctionne.');
                 } else {
                     displayError(`❌ Erreur Ollama: ${error.message}`);
                 }
