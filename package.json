@@ -1,0 +1,25 @@
+{
+  "name": "rift-frontend-vercel",
+  "version": "1.0.0",
+  "description": "1. Importez ce repo sur Vercel : https://vercel.com\r 2. Le déploiement se fera automatiquement.",
+  "main": "config.js",
+  "scripts": {
+    "dev": "live-server . --port=3000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dav5408d-glitch/NEW-FRONTEND.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/dav5408d-glitch/NEW-FRONTEND/issues"
+  },
+  "homepage": "https://github.com/dav5408d-glitch/NEW-FRONTEND#readme",
+  "dependencies": {
+    "live-server": "^1.2.2"
+  }
+}
