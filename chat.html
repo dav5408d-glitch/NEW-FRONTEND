@@ -1715,7 +1715,7 @@ IMPORTANT: Sois concis et va droit au but.`;
                 let apiUrl, apiOptions;
                 if (window.OLLAMA_PROXY) {
                     // Utiliser le proxy du serveur RIFT
-                    apiUrl = `${ollamaUrl}/generate`;
+                    apiUrl = `${ollamaUrl}/api/chat`;
                     apiOptions = {
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
