@@ -1562,11 +1562,12 @@ Titre (2 mots max):`;
                     
                     return false;
                 } else {
-                    // PC - utiliser localhost
-                    console.log('🖥️ Mode PC détecté');
-                    const response = await fetch('http://localhost:11434/api/version');
-                    window.OLLAMA_URL = 'http://localhost:11434';
-                    window.OLLAMA_PROXY = false;
+                    // PC - utiliser le proxy backend
+                    console.log('🖥️ Mode PC détecté - utilisation proxy backend');
+                    const apiUrl = window.RIFT_CONFIG ? window.RIFT_CONFIG.API_BASE_URL : 'http://localhost:3001';
+                    const response = await fetch(`${apiUrl}/api/health`);
+                    window.OLLAMA_URL = apiUrl;
+                    window.OLLAMA_PROXY = true;
                     return response.ok;
                 }
             } catch (error) {
