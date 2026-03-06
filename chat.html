@@ -1078,6 +1078,7 @@
             .message { max-width: 85%; }
         }
     </style>
+    <script src="config.js"></script>
 </head>
 <body>
     <header>
@@ -1176,6 +1177,10 @@
         let currentChatId = Date.now().toString();
         let chats = {};
         let uploadedImages = [];
+
+        // Configuration par défaut
+        window.OLLAMA_URL = window.RIFT_CONFIG ? window.RIFT_CONFIG.API_BASE_URL : 'http://localhost:11434';
+        window.OLLAMA_PROXY = true; // Utiliser le proxy par défaut
 
         function toggleMobileMenu() {
             const btn = document.querySelector('.hamburger-btn');
